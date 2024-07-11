@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_HOST=localhost'
+      - 'POSTGRES_DB=rate-limitng'
+      - 'POSTGRES_PASSWORD=Gade$1110$'
+      - 'POSTGRES_USER=postgres'
+    ports:
+      - '5432'
