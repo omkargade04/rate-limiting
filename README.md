@@ -22,37 +22,38 @@
       <th>Url</th>
       <th>Description</th>
       <th>Request Body</th>
-      <th>Header</th>
-      <th>Valid Path Variable</th>
-      <th>Request Param</th>
-      <th>No Path Variable</th>
   </tr>
   <tr>
       <td>POST</td>
       <td>/api/v1/users</td>
       <td>Create a new user</td>
       <td>create user vody</td>
+      <td></td>
   </tr>
     <tr>
       <td>GET</td>
       <td>/api/v1/users</td>
       <td>Retrieve all users</td>
+      <td></td>
   </tr>
   <tr>
       <td>GET</td>
       <td>/api/v1/users/{userId}</td>
       <td>Retrieve a user by ID</td>
+      <td></td>
   </tr>
   <tr>
       <td>PUT</td>
       <td>/api/v1/users/{userId}</td>
       <td>Update an existing user</td>
       <td>update user body</td>
+      <td></td>
   </tr>
   <tr>
       <td>DELETE</td>
       <td>/api/v1/users/{userId}</td>
       <td>Delete a user by ID</td>
+      <td></td>
   </tr>
 </table>
 
