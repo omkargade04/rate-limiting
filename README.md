@@ -31,55 +31,28 @@
       <td>POST</td>
       <td>/api/v1/users</td>
       <td>Create a new user</td>
-      <td>CreateUserRequest</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>create user vody</td>
   </tr>
     <tr>
       <td>GET</td>
       <td>/api/v1/users</td>
       <td>Retrieve all users</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
   </tr>
   <tr>
       <td>GET</td>
-      <td>/api/v1/users/{userIid}</td>
+      <td>/api/v1/users/{userId}</td>
       <td>Retrieve a user by ID</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
   </tr>
   <tr>
       <td>PUT</td>
       <td>/api/v1/users/{userId}</td>
       <td>Update an existing user</td>
-      <td>UpdateUserRequest</td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>update user body</td>
   </tr>
   <tr>
       <td>DELETE</td>
       <td>/api/v1/users/{userId}</td>
       <td>Delete a user by ID</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-  </tr>
-  <tr>
-      <td>GET</td>
-      <td>/api/v1/users</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
   </tr>
 </table>
 
