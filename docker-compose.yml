@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+
+  database:
+    container_name: database
+    image: postgres:latest
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: rate-limiting
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - ratelimiterNetwork
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - ratelimiterNetwork
+
+  ratelimiterexample:
+    image: 'ratelimiter:latest'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ratelimiter
+    restart: on-failure
+    env_file:
+      - .env  # Use the .env file for environment variables
+    ports:
+      - "1224:1224"
+    environment:
+      - server.port=1224
+      - spring.datasource.username=${DATABASE_USERNAME}
+      - spring.datasource.password=${DATABASE_PASSWORD}
+      - SECURITY_DB_IP=database
+      - SECURITY_DB_PORT=5432  # Update PostgreSQL port
+      - spring.datasource.url=jdbc:postgresql://database:5432/ratelimiter  # Update JDBC URL for PostgreSQL
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - database
+      - redis
+    networks:
+      - ratelimiterNetwork
+
+networks:
+  ratelimiterNetwork:

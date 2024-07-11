@@ -23,9 +23,9 @@ public class RateLimiterServiceImpl implements RateLimiterService {
     @Value("${rate.limiter.time.window.seconds}")
     private int TIME_WINDOW_IN_SECONDS;
 //
-//    public RateLimiterServiceImpl(RedisTemplate<String, Object> redisTemplate) {
-//        this.redisTemplate = redisTemplate;
-//    }
+    public RateLimiterServiceImpl(RedisTemplate<String, Object> redisTemplate) {
+        this.redisTemplate = redisTemplate;
+    }
 
     @Override
     public boolean isAllowed(String userId, String action) {
