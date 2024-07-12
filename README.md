@@ -68,14 +68,14 @@ The application can be built and run by the `Docker` engine. The `Dockerfile` ha
 Please follow directions shown below in order to build and run the application with Docker Compose file;
 
 ```sh
-$ cd ratelimiter
+$ cd rate-limiting
 $ docker-compose up -d
 ```
 
 If you change anything in the project and run it on Docker, you can also use this command shown below
 
 ```sh
-$ cd ratelimiter
+$ cd rate-limiting
 $ docker-compose up --build
 ```
 
